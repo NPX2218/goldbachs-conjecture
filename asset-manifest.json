@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/goldbachs-conjecture/static/css/main.e1bf7159.css",
+    "main.js": "/goldbachs-conjecture/static/js/main.9971a7c1.js",
+    "static/js/346.1a668358.chunk.js": "/goldbachs-conjecture/static/js/346.1a668358.chunk.js",
+    "static/js/585.a6c15a81.chunk.js": "/goldbachs-conjecture/static/js/585.a6c15a81.chunk.js",
+    "static/js/204.87b9c11c.chunk.js": "/goldbachs-conjecture/static/js/204.87b9c11c.chunk.js",
+    "static/media/goldbach_logo.png": "/goldbachs-conjecture/static/media/goldbach_logo.c75e14daae31054d4832.png",
+    "index.html": "/goldbachs-conjecture/index.html",
+    "main.e1bf7159.css.map": "/goldbachs-conjecture/static/css/main.e1bf7159.css.map",
+    "main.9971a7c1.js.map": "/goldbachs-conjecture/static/js/main.9971a7c1.js.map",
+    "346.1a668358.chunk.js.map": "/goldbachs-conjecture/static/js/346.1a668358.chunk.js.map",
+    "585.a6c15a81.chunk.js.map": "/goldbachs-conjecture/static/js/585.a6c15a81.chunk.js.map",
+    "204.87b9c11c.chunk.js.map": "/goldbachs-conjecture/static/js/204.87b9c11c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1bf7159.css",
+    "static/js/main.9971a7c1.js"
+  ]
+}
