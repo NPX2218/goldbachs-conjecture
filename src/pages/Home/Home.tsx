@@ -3,6 +3,7 @@
 /////////////////////////////////////
 
 import React from "react";
+import primesPyramid from "../../data/primes_pyramid.png";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import LocomotiveScroll from "locomotive-scroll";
@@ -86,13 +87,30 @@ const Home = ({ scroll }: Props) => {
             <h2 className="text-white text-2xl font-bold pb-2">
               Prime Sum Pattern in Pascal's Triangle
             </h2>
-            <p>
-              By overlaying a pattern between prime numbers and their sums, it
-              is obviously evident that even numbers can be formed by two prime
-              numbers, but it is unclear if this relationship is true for all
-              even numbers. We can however prove this using the Hardy-Littlewood
-              circle method
-            </p>
+            <div className="flex flex-col md:flex-row justify-between items-top">
+              <div className="lg:w-full md:w-2/3 pr-12">
+                <p>
+                  By overlaying a pattern between prime numbers and their sums,
+                  it is obviously evident that even numbers can be formed by two
+                  prime numbers, but it is unclear if this relationship is true
+                  for all even numbers. This can be seen by the photo attatched
+                  to this paragraph. By adding numbers on the left and right
+                  hand side, the sum can be seen as even numbers. Although this
+                  can partically be seen diagramatially, we must prove this
+                  using prove this using the Hardy-Littlewood circle method.
+                  <br />
+                  <br />
+                  This method provides a method for analyzing the distribution
+                  of prime sums through integration over the unit circle. By
+                  moving beyond isolated numerical cases and adressing the
+                  conjecture probabilistically and asymptotically across the
+                  infinite set of even numbers, a result can be found.
+                </p>
+              </div>
+              <div className="md:w-1/3 w-full flex items-center justify-center">
+                <img src={primesPyramid} alt="" width={300} height={300} />
+              </div>
+            </div>
           </section>
 
           <section id="prime-number-theorem" className="">
@@ -188,10 +206,16 @@ const Home = ({ scroll }: Props) => {
             multiply their probabilities together. When n is large enough, the
             value of C chnanges much slower than n. This maens the probability
             that both a and b are prime numbers is:
-            <span className="w-full flex items-center justify-center p-8">
+            <span className="flex-col w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$ \\pi'(a) \\times \\pi'(b) \\sim \\frac{1}{ln(n-C)} \\times \\frac{1}{ln(n+C)} = \\frac{1}{ln(n)} \\times \\frac{1}{ln(n)}= \\frac{1}{ln(n)^2}$"
+                  "$ \\pi'(a) \\times \\pi'(b) \\sim \\frac{1}{ln(n-C)} \\times \\frac{1}{ln(n+C)} $"
+                }
+              </Latex>
+              <br />
+              <Latex>
+                {
+                  "$  = \\frac{1}{ln(n)} \\times \\frac{1}{ln(n)}= \\frac{1}{ln(n)^2}$"
                 }
               </Latex>
             </span>
@@ -210,15 +234,15 @@ const Home = ({ scroll }: Props) => {
             </h2>
             To define a vector, we can do so with
             <span className="w-full flex items-center justify-center p-8">
-              <Latex>{"$e^{i \\theta}$"}</Latex> where{" "}
-              <Latex>{"$\\theta=2\\pi m $"}</Latex>
+              <Latex>{"$e^{i \\theta} \\, $"}</Latex>where{" "}
+              <Latex>{"$\\, \\theta=2\\pi m $"}</Latex>
             </span>
             We can also add a scaling factor which essentially creates a slider
             to the value of the angle theta. The scaling factor is{" "}
             <Latex>{"$ \\alpha $"}</Latex>, making our new defintion:
             <span className="w-full flex items-center justify-center p-8">
-              <Latex>{"$e^{2\\pi m i \\alpha}$"}</Latex> where{" "}
-              <Latex>{"$ \\alpha \\in [0,1]$"}</Latex>
+              <Latex>{"$e^{2\\pi m i \\alpha} \\, $"}</Latex> where{" "}
+              <Latex>{"$ \\,  \\alpha \\in [0,1]$"}</Latex>
             </span>
             If we iterate over our entire scaling factor, we go over the entire
             circle. Summing up the magnitudes, we get that the total value is
@@ -251,10 +275,16 @@ const Home = ({ scroll }: Props) => {
             less than <Latex>{"$N$"}</Latex> (Assuming we know all the primes,
             but in reality as <Latex>{"$N \\rightarrow \\infty$"}</Latex> we are
             not able to know all the primes).
-            <span className="w-full flex items-center justify-center p-8">
+            <span className="flex-col w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$\\sum_{p_1, p_2, p_3 \\leq N} \\int_0^1 e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha = \\int_0^1  \\sum_{p_1, p_2, p_3 \\leq N} e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
+                  "$\\sum_{p_1, p_2, p_3 \\leq N} \\int_0^1 e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
+                }
+              </Latex>
+              <br />
+              <Latex>
+                {
+                  "$ = \\int_0^1  \\sum_{p_1, p_2, p_3 \\leq N} e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
                 }
               </Latex>
             </span>
@@ -278,13 +308,121 @@ const Home = ({ scroll }: Props) => {
               </Latex>
             </span>
             This means we can rewrite our integral as:
-            <span className="w-full flex items-center justify-center p-8">
+            <span className="flex flex-col w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$ \\int_0^1 S(\\alpha, N) S(\\alpha, N) S(\\alpha, N) e^{-2\\pi iN \\alpha}  d \\alpha = \\int_0^1 S(\\alpha, N)^3 e^{-2\\pi iN \\alpha} d \\alpha $"
+                  "$ \\int_0^1 S(\\alpha, N) S(\\alpha, N) S(\\alpha, N) e^{-2\\pi iN \\alpha}  d \\alpha $"
+                }
+              </Latex>
+              <br />
+              <Latex>
+                {
+                  "$  = \\int_0^1 S(\\alpha, N)^3 e^{-2\\pi iN \\alpha} d \\alpha $"
                 }
               </Latex>
             </span>
+          </section>
+
+          <section id="circle-method-decomposition">
+            <br />
+            <h2 className="text-white text-2xl font-bold pb-2">
+              Decomposing the Integral: Major and Minor Arcs
+            </h2>
+            <p>
+              The integral we arrived at,{" "}
+              <Latex>
+                {"$\\int_0^1 S(\\alpha, N)^3 e^{-2\\pi i N \\alpha} d \\alpha$"}
+              </Latex>
+              , essentially counts the number of ways we can write{" "}
+              <Latex>{"$N$"}</Latex> as a sum of 3 primes.
+            </p>
+            <p>
+              To evaluate it, Hardy and Littlewood split the domain of{" "}
+              <Latex>{"$\\alpha$"}</Latex> into two parts:
+            </p>
+            <ul className="list-disc pl-6">
+              <li>
+                <strong>Major arcs</strong>: Small neighborhoods around rational
+                numbers like <Latex>{"$\\frac{a}{q}$"}</Latex> with small
+                denominator <Latex>{"$q$"}</Latex>.
+              </li>
+              <li>
+                <strong>Minor arcs</strong>: Everything else — where destructive
+                interference occurs.
+              </li>
+            </ul>
+            <p>
+              On the <strong>major arcs</strong>,{" "}
+              <Latex>{"$S(\\alpha, N)$"}</Latex> behaves in a fairly
+              "predictable" or "structured" way, allowing us to approximate it
+              using number-theoretic tools like exponential sums and the prime
+              number theorem.
+            </p>
+            <p>
+              On the <strong>minor arcs</strong>,{" "}
+              <Latex>{"$S(\\alpha, N)$"}</Latex> behaves chaotically — the
+              vectors point in seemingly random directions, and when you sum
+              them, they mostly cancel out. This is like summing unit vectors
+              all around a circle:
+            </p>
+            <span className="w-full flex items-center justify-center p-4">
+              <Latex>
+                {
+                  "$ \\sum e^{2\\pi i m \\alpha} \\approx 0 $ (if $\\alpha$ is irrational or not well-approximated by rationals)"
+                }
+              </Latex>
+            </span>
+            <p>
+              So the contribution from the minor arcs is very small — almost
+              like noise. The major arcs, on the other hand, lead to
+              constructive interference and give us the dominant term in the
+              result.
+            </p>
+          </section>
+
+          <section id="number-of-revolutions">
+            <br />
+            <h2 className="text-white text-2xl font-bold pb-2">
+              Clock Vectors and Number of Revolutions
+            </h2>
+            <p>
+              A helpful way to visualize{" "}
+              <Latex>{"$e^{2\\pi i m \\alpha}$"}</Latex> is as a unit vector
+              rotating around the complex circle. If{" "}
+              <Latex>{"$\\alpha = \\frac{a}{q}$"}</Latex> is rational, then
+              after <Latex>{"$q$"}</Latex> full revolutions, the vector returns
+              to its original position.
+            </p>
+            <p>
+              Think of these vectors like points on a clock. If{" "}
+              <Latex>{"$\\alpha = \\frac{1}{12}$"}</Latex>, the vector rotates
+              by one hour tick each time. After 12 ticks, it returns to the same
+              place.
+            </p>
+            <p>
+              When you sum up many such vectors — say{" "}
+              <Latex>{"$e^{2\\pi i p \\alpha}$"}</Latex> where{" "}
+              <Latex>{"$p$"}</Latex> ranges over primes — you can either get:
+            </p>
+            <ul className="list-disc pl-6">
+              <li>
+                <strong>Constructive interference</strong> (they add up if the
+                rotation repeats periodically, i.e.,{" "}
+                <Latex>{"$\\alpha \\approx \\frac{a}{q}$"}</Latex> for small{" "}
+                <Latex>{"$q$"}</Latex>)
+              </li>
+              <li>
+                <strong>Destructive interference</strong> (they cancel if{" "}
+                <Latex>{"$\\alpha$"}</Latex> is irrational or the rotations
+                never align)
+              </li>
+            </ul>
+            <p>
+              Therefore, this clock analogy helps us understand why the major
+              arcs (with rational <Latex>{"$\\alpha$"}</Latex>) give strong
+              contributions, while the minor arcs (irrational or large
+              denominator <Latex>{"$\\alpha$"}</Latex>) give negligible ones.
+            </p>
           </section>
 
           {/* <section id="euler-lagrange-derivation">
