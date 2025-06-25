@@ -125,7 +125,7 @@ const Home = ({ scroll }: Props) => {
             <Latex>{"$\\frac{n}{ln(n)}$"}</Latex> where n is a large integer.
             This can be defined as <br />
             <span className="w-full flex items-center justify-center">
-              <Latex>{"$\\pi(n) \\sim \\frac{n}{ln(n)}$"}</Latex>
+              <Latex>{"$\\displaystyle \\pi(n) \\sim \\frac{n}{ln(n)}$"}</Latex>
             </span>
             <br />
             To find the number of primes within a small interval defined as
@@ -135,7 +135,7 @@ const Home = ({ scroll }: Props) => {
             <span className="p-8 w-full flex items-center justify-center">
               <Latex>
                 {
-                  "$\\frac{pi(n+\\Delta n) - \\pi(n)}{n+\\Delta n - n}= \\frac{\\pi(n+\\Delta n) - \\pi(n)}{\\Delta n}$"
+                  "$\\displaystyle \\frac{pi(n+\\Delta n) - \\pi(n)}{n+\\Delta n - n}= \\frac{\\pi(n+\\Delta n) - \\pi(n)}{\\Delta n}$"
                 }
               </Latex>
             </span>
@@ -156,7 +156,7 @@ const Home = ({ scroll }: Props) => {
             <span className="w-full flex items-center justify-center">
               <Latex>
                 {
-                  "$ \\pi'(n) \\sim \\frac{ln(n) \\times 1 - n \\times \\frac{1}{n}}{(ln(n))^2} =  \\frac{ln(n)-1}{(ln(n))^2)} $"
+                  "$\\displaystyle \\pi'(n) \\sim \\frac{ln(n) \\times 1 - n \\times \\frac{1}{n}}{(ln(n))^2} =  \\frac{ln(n)-1}{(ln(n))^2)} $"
                 }
               </Latex>
             </span>
@@ -170,7 +170,7 @@ const Home = ({ scroll }: Props) => {
             <span className="w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$\\pi'(n) \\sim \\frac{ln(n)-1}{(ln(n))^2} \\approx \\frac{ln(n)}{(ln(n))^2} \\approx \\frac{1}{ln(n)}$"
+                  "$\\displaystyle \\pi'(n) \\sim \\frac{ln(n)-1}{(ln(n))^2} \\approx \\frac{ln(n)}{(ln(n))^2} \\approx \\frac{1}{ln(n)}$"
                 }
               </Latex>
               <br />
@@ -181,7 +181,7 @@ const Home = ({ scroll }: Props) => {
             <br />
             <br />
             <span className="w-full flex items-center justify-center">
-              <Latex>{"$\\frac{1}{ln(n)}$"}</Latex>
+              <Latex>{"$\\displaystyle \\frac{1}{ln(n)}$"}</Latex>
             </span>
             <br />
             Take a large even number, which can be defined as 2n. On a number
@@ -192,13 +192,17 @@ const Home = ({ scroll }: Props) => {
             prime number is:
             <span className="w-full flex items-center justify-center p-8">
               <Latex>
-                {"$ \\pi'(a) \\sim \\frac{1}{ln(a)}=\\frac{1}{ln(n-C)}$"}
+                {
+                  "$\\displaystyle \\pi'(a) \\sim \\frac{1}{ln(a)}=\\frac{1}{ln(n-C)}$"
+                }
               </Latex>
             </span>
             Similarly, the probability that b is a prime number is:
             <span className="w-full flex items-center justify-center p-8">
               <Latex>
-                {"$ \\pi'(b) \\sim \\frac{1}{ln(b)}=\\frac{1}{ln(n+C)}$"}
+                {
+                  "$\\displaystyle \\pi'(b) \\sim \\frac{1}{ln(b)}=\\frac{1}{ln(n+C)}$"
+                }
               </Latex>
             </span>
             <br />
@@ -209,20 +213,22 @@ const Home = ({ scroll }: Props) => {
             <span className="flex-col w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$ \\pi'(a) \\times \\pi'(b) \\sim \\frac{1}{ln(n-C)} \\times \\frac{1}{ln(n+C)} $"
+                  "$\\displaystyle \\pi'(a) \\times \\pi'(b) \\sim \\frac{1}{ln(n-C)} \\times \\frac{1}{ln(n+C)} $"
                 }
               </Latex>
               <br />
               <Latex>
                 {
-                  "$  = \\frac{1}{ln(n)} \\times \\frac{1}{ln(n)}= \\frac{1}{ln(n)^2}$"
+                  "$\\displaystyle  = \\frac{1}{ln(n)} \\times \\frac{1}{ln(n)}= \\frac{1}{ln(n)^2}$"
                 }
               </Latex>
             </span>
             So the number of prime pairs is:
             <span className="w-full flex items-center justify-center p-8">
               <Latex>
-                {"$\\frac{1}{ln(n)^2} \\times n = \\frac{n}{ln(n)^2}$"}
+                {
+                  "$\\displaystyle \\frac{1}{ln(n)^2} \\times n = \\frac{n}{ln(n)^2}$"
+                }
               </Latex>
             </span>
           </section>
@@ -248,13 +254,17 @@ const Home = ({ scroll }: Props) => {
             circle. Summing up the magnitudes, we get that the total value is
             equal or mathematically:
             <span className="w-full flex items-center justify-center p-8">
-              <Latex>{"$\\int_0^1 e^{2\\pi m i \\alpha} d \\alpha = 0$"}</Latex>
+              <Latex>
+                {
+                  "$\\displaystyle \\int_0^1 e^{2\\pi m i \\alpha} d \\alpha = 0$"
+                }
+              </Latex>
             </span>
             This means that
             <span className="w-full flex items-center justify-center p-8">
               <Latex className="text-white">
                 {
-                  "$$  f(x)= \\begin{cases} {\\int_0^1 e^{2\\pi m i \\alpha} d \\alpha = 0}, & m = 1,2,3... \\\\ \\int_0^1 e^{2\\pi m i \\alpha} d \\alpha = 1, & m = 0 \\end{cases}$$"
+                  "$$ \\displaystyle  f(x)= \\begin{cases} {\\displaystyle \\int_0^1 e^{2\\pi m i \\alpha} d \\alpha = 0}, & m = 1,2,3... \\\\ \\displaystyle \\int_0^1 e^{2\\pi m i \\alpha} d \\alpha = 1, & m = 0 \\end{cases}$$"
                 }
               </Latex>
             </span>
@@ -267,7 +277,7 @@ const Home = ({ scroll }: Props) => {
             <span className="w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$\\int_0^1 e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
+                  "$\\displaystyle \\int_0^1 e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
                 }
               </Latex>
             </span>
@@ -278,13 +288,13 @@ const Home = ({ scroll }: Props) => {
             <span className="flex-col w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$\\sum_{p_1, p_2, p_3 \\leq N} \\int_0^1 e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
+                  "$\\displaystyle \\sum_{p_1, p_2, p_3 \\leq N} \\int_0^1 e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
                 }
               </Latex>
               <br />
               <Latex>
                 {
-                  "$ = \\int_0^1  \\sum_{p_1, p_2, p_3 \\leq N} e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
+                  "$\\displaystyle = \\int_0^1  \\sum_{p_1, p_2, p_3 \\leq N} e^{2\\pi  (p_1,p_2,p_3 - N) i \\alpha} d \\alpha $"
                 }
               </Latex>
             </span>
@@ -296,7 +306,7 @@ const Home = ({ scroll }: Props) => {
             <span className="w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$ \\int_0^1  \\sum_{p_1, p_2, p_3 \\leq N} e^{2\\pi p_1 i \\alpha} e^{2\\pi p_2 i \\alpha} e^{2\\pi p_3 i \\alpha} e^{-2\\pi iN \\alpha} d \\alpha $"
+                  "$\\displaystyle  \\int_0^1  \\sum_{p_1, p_2, p_3 \\leq N} e^{2\\pi p_1 i \\alpha} e^{2\\pi p_2 i \\alpha} e^{2\\pi p_3 i \\alpha} e^{-2\\pi iN \\alpha} d \\alpha $"
                 }
               </Latex>
             </span>
@@ -304,25 +314,63 @@ const Home = ({ scroll }: Props) => {
             general, we can create a general function wrapper.
             <span className="w-full flex items-center justify-center p-8">
               <Latex>
-                {"$ S(\\alpha, N)= \\sum_{p<N} e^{2\\pi p i \\alpha} $"}
+                {
+                  "$\\displaystyle S(\\alpha, N)= \\sum_{p<N} e^{2\\pi p i \\alpha} $"
+                }
               </Latex>
             </span>
             This means we can rewrite our integral as:
-            <span className="flex flex-col w-full flex items-center justify-center p-8">
+            <span className=" flex-col w-full flex items-center justify-center p-8">
               <Latex>
                 {
-                  "$ \\int_0^1 S(\\alpha, N) S(\\alpha, N) S(\\alpha, N) e^{-2\\pi iN \\alpha}  d \\alpha $"
+                  "$ \\displaystyle \\int_0^1 S(\\alpha, N) S(\\alpha, N) S(\\alpha, N) e^{-2\\pi iN \\alpha}  d \\alpha $"
                 }
               </Latex>
               <br />
               <Latex>
                 {
-                  "$  = \\int_0^1 S(\\alpha, N)^3 e^{-2\\pi iN \\alpha} d \\alpha $"
+                  "$ \\displaystyle  = \\int_0^1 S(\\alpha, N)^3 e^{-2\\pi iN \\alpha} d \\alpha $"
                 }
               </Latex>
             </span>
           </section>
-
+          <section>
+            <br />
+            <h2 className="text-white text-2xl font-bold pb-2">
+              Inspecting <Latex>{"$ \\displaystyle S(\\alpha, N) $"}</Latex>{" "}
+              through a Visualizer
+            </h2>
+            Doing an example where <Latex>{"$N = 11 $"}</Latex> yields:
+            <span className=" flex-col w-full flex items-center justify-center p-8">
+              <Latex>
+                {
+                  "$\\displaystyle S(\\alpha, 11) = \\sum_{p<11} e^{2 \\pi i p \\alpha} = e^{2 \\pi i 2 \\alpha} + e^{2 \\pi i 3 \\alpha} + e^{2 \\pi i 5 \\alpha} + e^{2 \\pi i 7 \\alpha} $"
+                }
+              </Latex>
+            </span>
+            <p>
+              Each of these individual terms in the sum can be seperated into
+              their individual clocks, with the <Latex>{"$p$"}</Latex> term
+              essentially affecting the rotation speed, where the larger the
+              value of <Latex>{"$p$"}</Latex> the faster the rotation. Since
+              this is a sum, we need to add up the sums of the circles, to
+              arrive at a value for our number <Latex>{"$N$"}</Latex>. This has
+              been done graphically in desmos, and can be visualized by altering
+              the value of <Latex>{"$\\alpha$"}</Latex> in the calculator. Each
+              of the terms have also been sequentially added into the calculator
+              to match.
+            </p>
+            <br />
+            <br />
+            <div className="relative w-full h-[600px] ">
+              <iframe
+                src="https://www.desmos.com/calculator/2ak5vlk0nm?embed?expressions=true"
+                className="absolute top-0 left-0 w-full h-full border border-gray-300"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </section>
           <section id="circle-method-decomposition">
             <br />
             <h2 className="text-white text-2xl font-bold pb-2">
@@ -331,7 +379,9 @@ const Home = ({ scroll }: Props) => {
             <p>
               The integral we arrived at,{" "}
               <Latex>
-                {"$\\int_0^1 S(\\alpha, N)^3 e^{-2\\pi i N \\alpha} d \\alpha$"}
+                {
+                  "$ \\displaystyle\\int_0^1 S(\\alpha, N)^3 e^{-2\\pi i N \\alpha} d \\alpha$"
+                }
               </Latex>
               , essentially counts the number of ways we can write{" "}
               <Latex>{"$N$"}</Latex> as a sum of 3 primes.
@@ -368,7 +418,7 @@ const Home = ({ scroll }: Props) => {
             <span className="w-full flex items-center justify-center p-4">
               <Latex>
                 {
-                  "$ \\sum e^{2\\pi i m \\alpha} \\approx 0 $ (if $\\alpha$ is irrational or not well-approximated by rationals)"
+                  "$ \\displaystyle \\sum e^{2\\pi i m \\alpha} \\approx 0 $ (if $\\alpha$ is irrational or not well-approximated by rationals)"
                 }
               </Latex>
             </span>
@@ -427,14 +477,6 @@ const Home = ({ scroll }: Props) => {
               Try alterting the <Latex>{"$\\alpha$"}</Latex> value.
             </p>
             <br />
-            <div className="relative w-full h-[600px] ">
-              <iframe
-                src="https://www.desmos.com/calculator/2ak5vlk0nm?embed?expressions=true"
-                className="absolute top-0 left-0 w-full h-full border border-gray-300"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
           </section>
 
           {/* <section id="euler-lagrange-derivation">
