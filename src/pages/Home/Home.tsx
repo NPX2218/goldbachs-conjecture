@@ -62,13 +62,13 @@ const Home = ({ scroll }: Props) => {
                 Or mathematically,{" "}
                 <Latex>{"$N_{odd} = p_1 + p_2 + p_3$"}</Latex> where{" "}
                 <Latex>{"$ p_1, p_2, p_3 $"}</Latex> are primes and{" "}
-                <Latex>{"$ N_{odd} > 2$"}</Latex>
+                <Latex>{"$ N_{odd} > 5$"}</Latex>
               </ol>
               <br />
-              If we are able to prove the strong Conjecture, we can use n = 3 +
-              even to reach any n that is greater than 5. This is also because 3
-              is a prime number --- and can, therefore, be added to get any
-              other odd number.
+              If we are able to prove the strong Conjecture, we can use{" "}
+              <Latex>{"$n = 3 + even$"}</Latex> to reach any n that is greater
+              than 5. This is also because 3 is a prime number --- and can,
+              therefore, be added to get any other odd number.
               <br />
               <br />
               Although there are no seemingly real-world applications to the
@@ -85,7 +85,7 @@ const Home = ({ scroll }: Props) => {
           <section id="primes-pyramid">
             <br />
             <h2 className="text-white text-2xl font-bold pb-2">
-              Prime Sum Pattern in Pascal's Triangle
+              Sums of two primes at the intersections of three lines
             </h2>
             <div className="flex flex-col md:flex-row justify-between items-top">
               <div className="lg:w-full md:w-2/3 pr-12">
@@ -142,9 +142,9 @@ const Home = ({ scroll }: Props) => {
             This formula looks similar to that of a derivative using first
             priciples, where
             <span className="w-full flex items-center justify-center p-8">
-              <Latex className="">
+              <Latex className="block text-center m-[1em]">
                 {
-                  "$f'(x)= lim_{\\Delta x \\to 0} \\frac{f(x+\\Delta x) - f(x)}{\\Delta x}$"
+                  "$\\displaystyle f'(x)= \\lim_{\\Delta x \\to 0} \\frac{f(x+\\Delta x) - f(x)}{\\Delta x}$"
                 }
               </Latex>
             </span>
@@ -423,6 +423,18 @@ const Home = ({ scroll }: Props) => {
               contributions, while the minor arcs (irrational or large
               denominator <Latex>{"$\\alpha$"}</Latex>) give negligible ones.
             </p>
+            <p>
+              Try alterting the <Latex>{"$\\alpha$"}</Latex> value.
+            </p>
+            <br />
+            <div className="relative w-full h-[600px] ">
+              <iframe
+                src="https://www.desmos.com/calculator/2ak5vlk0nm?embed?expressions=true"
+                className="absolute top-0 left-0 w-full h-full border border-gray-300"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
           </section>
 
           {/* <section id="euler-lagrange-derivation">

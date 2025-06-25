@@ -45,3 +45,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 "# goldbachs-conjecture"
+
+git add .
+git commit -m "commit"
+git push -u origin main
+npm run deploy
