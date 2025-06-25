@@ -3,6 +3,7 @@
 /////////////////////////////////////
 
 import React from "react";
+import primeCountingFunction from "../../data/prime_counting_function.png";
 import primesPyramid from "../../data/primes_pyramid.png";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -111,6 +112,154 @@ const Home = ({ scroll }: Props) => {
                 <img src={primesPyramid} alt="" width={300} height={300} />
               </div>
             </div>
+          </section>
+
+          <section id="prime-number-theorem" className="">
+            <br />
+            <h2 className="text-white text-2xl font-bold pb-2">
+              Gauss's Conjecture
+            </h2>
+            <p>
+              Carl Friedrich Gauss inspected the relationship between prime
+              numbers and if there was a quantifiable relationship that could
+              help predict the number of prime numbers in relation to the real
+              numbers. For that, he made tables consisting of the primes up to 3
+              million and looked for patterns. To graph a relationship, Gauss
+              created a function called the Prime Counting Function. For every
+              prime number reached on the x-axis, the y-axis was incremented by
+              one. This essentially created a step-like function. An example of
+              the function can be seen here:
+            </p>
+            <div className="flex items-center justify-center">
+              {" "}
+              <img src={primeCountingFunction} className="p-8" alt="" />
+            </div>
+            As the function is tested and for larger and larger number values,
+            Gauss had realized if <Latex>{"$\\pi(n) = f(x)$"}</Latex> that must
+            mean that <Latex>{"$\\frac{\\pi(n)}{f(x)} = 1$"}</Latex> assuming
+            that <Latex>{"$f(x)$ "}</Latex>
+            correctly evaluates to <Latex>{"$\\pi(n)$"}</Latex>. Gauss had
+            noticed that a function <Latex>{"$f(x) = \\frac{n}{ln(n)}$"}</Latex>{" "}
+            and where <Latex>{"$\\frac{\\pi(n)}{\\frac{n}{ln(n)}} = 1$"}</Latex>{" "}
+            had fit his model as <Latex>{"$N \\rightarrow \\infin$"}</Latex>. Or
+            more simply:
+            <span className="p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "$\\displaystyle \\lim_{x \\rightarrow \\infin} \\frac{\\pi(n)}{\\frac{n}{ln(n)}} = 1$"
+                }
+              </Latex>
+            </span>
+            This means he postulated that the prime counting function could be
+            defined as
+            <span className="w-full flex items-center justify-center p-8">
+              {" "}
+              <Latex>
+                {"$\\displaystyle \\pi(n) \\sim  \\frac{n}{ln(n)}$"}
+              </Latex>
+            </span>
+            Gauss's conjecture was later proved to be true mathematically true
+            independently by both Jacques Hadamard and Charles Jean de la Vallée
+            Poussin. Both mathematicians used the Riemann zeta function to prove
+            the prime number theorem.
+          </section>
+
+          <section id="prime-number-theorem" className="">
+            <br />
+            <h2 className="text-white text-2xl font-bold pb-2">
+              Riemann Hypothesis
+            </h2>
+            <p>The Zeta function is shown as below:</p>
+            <span className="p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "$\\zeta(s)=\\frac{1}{1^s}+\\frac{1}{2^s}+\\frac{1}{3^s}+\\frac{1}{4^s}+\\frac{1}{5^s}+...$"
+                }
+              </Latex>
+            </span>
+            Euler had proved that the zeta function converges for all values
+            where <Latex>{"$s > 1$"}</Latex>. This can essentially be done by
+            using the p-test, which states that a sum{" "}
+            <Latex>{"$\\sum_{n=1}^{\\infin} \\frac{1}{x^n}$"}</Latex> only
+            converges when <Latex>{"$p > 1$"}</Latex>. Finding the zeros of the
+            zeta function was necessary to proving the prime number theory, and
+            the Riemann Hypothesis helps refine that.
+            {/*! ADD THE PROOF OF THE P-TEST FROM CALC II */}
+            Euler had tried to connect this zeta function with prime numbers,
+            and done so like this.
+            <span className="flex-col p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "(1) $\\zeta(s)=1+\\frac{1}{2^s}+\\frac{1}{3^s}+\\frac{1}{4^s}+\\frac{1}{5^s}+...$"
+                }
+              </Latex>
+            </span>
+            <p>
+              Multiplying each side by <Latex>{"$\\frac{1}{2^s}$"}</Latex>
+            </p>
+            <span className="flex-col p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "(2) $\\frac{1}{2^s}\\zeta(s)=\\frac{1}{2^s}+\\frac{1}{4^s}+\\frac{1}{6^s}+\\frac{1}{8^s}+\\frac{1}{10^s}+...$"
+                }
+              </Latex>
+            </span>
+            <p>Then by subtracting equation (2) from (1), we get:</p>
+            <span className="flex-col p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "$LHS = \\zeta(s) - \\frac{1}{2^s}\\zeta = (1-\\frac{1}{2^s})\\zeta(s)$"
+                }
+              </Latex>
+              <br />
+              <Latex>
+                {
+                  "$RHS = 1+\\frac{1}{3^s}+\\frac{1}{5^s}+\\frac{1}{7^s}+\\frac{1}{9^s}+\\frac{1}{11^s}+\\frac{1}{13^s} +...$"
+                }
+              </Latex>
+            </span>
+            <p>
+              Repeating for the <Latex>{"$\\frac{1}{3^s}$ term we get:"}</Latex>
+            </p>
+            <span className="flex-col p-8 w-full flex items-center justify-center">
+              <Latex>
+                {"$LHS = (1-\\frac{1}{2^s})(1-\\frac{1}{3^s})\\zeta(s)$"}
+              </Latex>
+              <br />
+              <Latex>
+                {
+                  "$RHS = 1+\\frac{1}{5^s}+\\frac{1}{7^s}+\\frac{1}{11^s}+\\frac{1}{13^s}+\\frac{1}{17^s}+...$"
+                }
+              </Latex>
+            </span>
+            Repeating this process for all the terms, we arrive at:
+            <span className="flex-col p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "$LHS = (1-\\frac{1}{2^s})(1-\\frac{1}{3^s})(1-\\frac{1}{5^s})(1-\\frac{1}{7^s})(1-\\frac{1}{11^s})\\zeta(s)$"
+                }
+              </Latex>
+              <br />
+              <Latex>{"$RHS = 1$"}</Latex>
+            </span>
+            Isolating back for our zeta function:
+            <span className="flex-col p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "$\\zeta(s)=\\frac{1}{(1-\\frac{1}{2^s})(1-\\frac{1}{3^s})(1-\\frac{1}{5^s})(1-\\frac{1}{7^s})(1-\\frac{1}{11^s})...}$"
+                }
+              </Latex>
+            </span>
+            This can be condensed into:
+            <span className="flex-col p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "$\\displaystyle \\zeta(s) = \\prod_{p\\ \\text{prime}} \\frac{1}{(1 - \\frac{1}{p^s})}$"
+                }
+              </Latex>
+            </span>
+            Using this very definition, the idea of prime numbers and the
+            Riemann Hypothesis were connected.
           </section>
 
           <section id="prime-number-theorem" className="">
@@ -330,6 +479,12 @@ const Home = ({ scroll }: Props) => {
               <Latex>
                 {
                   "$ \\displaystyle  = \\int_0^1 S(\\alpha, N)^3 e^{-2\\pi iN \\alpha} d \\alpha $"
+                }
+              </Latex>
+              <br />
+              <Latex>
+                {
+                  "$ \\displaystyle \\therefore h(N)=    \\int_0^1 S(\\alpha, N)^3 e^{-2\\pi iN \\alpha} d \\alpha $"
                 }
               </Latex>
             </span>
