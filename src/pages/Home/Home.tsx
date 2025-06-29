@@ -97,8 +97,8 @@ const Home = ({ scroll }: Props) => {
                   for all even numbers. This can be seen by the photo attatched
                   to this paragraph. By adding numbers on the left and right
                   hand side, the sum can be seen as even numbers. Although this
-                  can partically be seen diagramatially, we must prove this
-                  using prove this using the Hardy-Littlewood circle method.
+                  can partically be seen diagramatially, we can prove this using
+                  prove this using the Hardy-Littlewood circle method.
                   <br />
                   <br />
                   This method provides a method for analyzing the distribution
@@ -114,7 +114,7 @@ const Home = ({ scroll }: Props) => {
             </div>
           </section>
 
-          <section id="prime-number-theorem" className="">
+          <section id="guass-conjecture" className="">
             <br />
             <h2 className="text-white text-2xl font-bold pb-2">
               Gauss's Conjecture
@@ -150,8 +150,8 @@ const Home = ({ scroll }: Props) => {
                 }
               </Latex>
             </span>
-            This means he postulated that the prime counting function could be
-            defined as
+            This allowed him to postulate that the prime counting function could
+            be defined as:
             <span className="w-full flex items-center justify-center p-8">
               {" "}
               <Latex>
@@ -164,7 +164,7 @@ const Home = ({ scroll }: Props) => {
             the prime number theorem.
           </section>
 
-          <section id="prime-number-theorem" className="">
+          <section id="riemann-hypothesis" className="">
             <br />
             <h2 className="text-white text-2xl font-bold pb-2">
               Riemann Hypothesis
@@ -258,14 +258,106 @@ const Home = ({ scroll }: Props) => {
                 }
               </Latex>
             </span>
-            Using this very definition, the idea of prime numbers and the
-            Riemann Hypothesis were connected.
+            Using this very definition, the idea of prime numbers and the zeta
+            function were connected. This means understanding the behaviour of{" "}
+            <Latex>{"$ \\displaystyle \\zeta(s)$ "}</Latex>
+            we can understand the encoding of primes. There were several steps
+            needed to deepen and create a connection that directly help support
+            the prime counting function, which can be explored further online.
+            <br />
+            <br />
+            Below are two parts that were explored by mathematicians related the
+            zeta function, but which do not directly have an impact on the
+            placement of primes. These two are the simple poles and the trivial
+            zeros. However, before exploring these two areas, Riemann had to
+            extend the zeta function to accept complex function arguments:
+            <span className="p-8 w-full flex items-center justify-center">
+              <Latex>{"$s = \\sigma + it$ where "}</Latex>
+              <Latex>{" $\\ \\in \\mathbb{C}$"}</Latex>
+            </span>
+            By doing so with anayltic continuation, he had shown that{" "}
+            <Latex>{"$\\displaystyle \\zeta(s)$ "}</Latex>
+            has a simple pole at <Latex>{"$s=1$"}</Latex>. This essentially
+            means there exists a singularity at <Latex>{"$s=1$"}</Latex>. A
+            function is said to have a simple pole when:
+            <span className="p-8 w-full flex items-center justify-center">
+              <Latex>
+                {
+                  "$\\displaystyle \\lim_{s \\to a} (s - a)f(s) = finite \\ and \\ non zero$"
+                }
+              </Latex>
+            </span>
+            In this case:
+            <span className="p-8 w-full flex items-center justify-center">
+              <Latex>
+                {"$\\displaystyle \\lim_{s \\to 1} (s - 1)\\zeta(s) = 1$"}
+              </Latex>
+            </span>
+            This means that there exists a simple pole at{" "}
+            <Latex>{"$s=1$"}</Latex>.
+            <br />
+            There are trivial zeros at <Latex>{"$s=-2, -4, -6, ...$"}</Latex>.
+            These need to be explored by using the extended domain of our
+            function, which rewrites the zeta function as.
+            <span className="sm:flex-row flex-col space-x-1 sm:space-y-0 space-y-5 w-full flex items-center justify-center p-8">
+              <Latex>
+                {
+                  "$\\displaystyle \\zeta(s) = 2^s \\pi^{s-1}\\sin(\\frac{\\pi s}{2}) \\Gamma(1-s)\\zeta(1-s) \\  $"
+                }
+              </Latex>
+              <p>where</p>
+              <Latex>
+                {
+                  "$\\ \\displaystyle \\Gamma(s) = \\int_{0}^{\\infty} x^{s-1}e^{-x}dx$"
+                }
+              </Latex>
+            </span>
+            A negative even number can be written as{" "}
+            <Latex>{"$s = -2m, m \\in \\mathbb{Z}^+$"}</Latex>. This means the
+            zeta function is equal to{" "}
+            <span className="sm:flex-row flex-col space-x-1 sm:space-y-0 space-y-5 w-full flex items-center justify-center pl-8 pr-8 pt-8">
+              <Latex>
+                {
+                  "$\\displaystyle \\zeta(-2m) = 2^{-2m} \\pi^{-2m-1}\\sin(\\frac{\\pi (-2m)}{2}) $"
+                }
+              </Latex>
+              <Latex>{"$\\times \\ \\Gamma(1-(-2m))\\zeta(1-(-2m)) $"}</Latex>
+            </span>
+            <span className="space-y-8 p-8 w-full flex items-center justify-center flex-col">
+              <Latex>
+                {
+                  "$\\displaystyle = 2^{-2m} \\pi^{-2m-1}\\sin(-\\pi m) \\Gamma(1 + 2m)\\zeta(1 + 2m) $"
+                }
+              </Latex>
+              <Latex>
+                {
+                  "$\\displaystyle = 2^{-2m} \\pi^{-2m-1}\\underbrace{\\sin(-\\pi m)}_{=\\ sin(\\pi m)\\ =\\ 0} \\Gamma(1 + 2m)\\zeta(1 + 2m) $"
+                }
+              </Latex>
+              <Latex>
+                {
+                  "$\\displaystyle = 2^{-2m} \\pi^{-2m-1} \\times 0 \\times \\Gamma(1 + 2m)\\zeta(1 + 2m) $"
+                }
+              </Latex>
+              <Latex>{"$ = 0$"}</Latex>
+            </span>
+            Therefore, there are no zeros at{" "}
+            <Latex>{"$s=-2, -4, -6, ...$"}</Latex>. These can be reffered to as
+            trivial zeros. These were important to explore, but do not have any
+            direct effect on the location of primes on a number line. More
+            importantly, it has non-trivial zeros in the strip{" "}
+            <Latex>{"$0 < \\Re(s) < 1$"}</Latex> that are important to explore.
+            The Riemman Hypothesis is that all nontrivial zeros of zeta lie on
+            the critical line where <Latex>{"$\\Re(s) = \\frac{1}{2} $"}</Latex>
+            . The need for the Riemman Hypothesis will be explored in the next
+            section, but in relation to the prime numbers, only the critical
+            line is important.
           </section>
 
           <section id="prime-number-theorem" className="">
             <br />
             <h2 className="text-white text-2xl font-bold pb-2">
-              Prime Number Theorem
+              Prime Number Theorem (PNT)
             </h2>
             <p>
               The prime number theorem states that the number of primes less
@@ -333,6 +425,9 @@ const Home = ({ scroll }: Props) => {
               <Latex>{"$\\displaystyle \\frac{1}{ln(n)}$"}</Latex>
             </span>
             <br />
+            <h2 className="text-white text-2xl font-bold pb-2">
+              Using the Prime Number Theorem for the Strong Goldbach Conjecture
+            </h2>
             Take a large even number, which can be defined as 2n. On a number
             line, this could be bifurcated, with n in the middle. The value of{" "}
             <Latex>{"$2n=a+b$"}</Latex> where <Latex>{"$a<n$"}</Latex> and{" "}
@@ -357,7 +452,7 @@ const Home = ({ scroll }: Props) => {
             <br />
             To calculate the probability that both a and b are prime numbers, we
             multiply their probabilities together. When n is large enough, the
-            value of C chnanges much slower than n. This maens the probability
+            value of C changes much slower than n. This maens the probability
             that both a and b are prime numbers is:
             <span className="flex-col w-full flex items-center justify-center p-8">
               <Latex>
@@ -380,9 +475,75 @@ const Home = ({ scroll }: Props) => {
                 }
               </Latex>
             </span>
+            Hardy and Littlewood had refined the number of prime number counting
+            pairs by adding a correction factor. This meant that their final
+            result was:
+            <span className="w-full flex items-center justify-center p-8">
+              <Latex>
+                {
+                  "$ \\displaystyle \\# prime \\ pairs \\approx 2C_2 \\times \\prod_{p | n \\ \\ \\  p > n} \\frac{p-1}{p-2} \\times  \\frac{n}{ln(n)^2}$"
+                }
+              </Latex>
+            </span>
+            However, this is not a proof but rather only an approximation. Their
+            conclusion shows that as the number is larger, there are more ways
+            to form an even number as a product of two primes.
+            <br />
+            <br />
+            <h2 className="text-white text-2xl font-bold pb-2">
+              The Logarithmic Integral and Riemman Hypothesis
+            </h2>
+            Guass had later proposed the approximate the prime counting function
+            using:
+            <span className="w-full flex items-center justify-center p-8">
+              <Latex>
+                {
+                  "$\\displaystyle \\pi(x) \\approx Li(x) = \\int_{2}^{x} \\frac{1}{ln(t)}dt$"
+                }
+              </Latex>
+            </span>
+            This integral was a much better fit as{" "}
+            <Latex>{"$x \\to \\infty$"}</Latex> compared to{" "}
+            <Latex>{"$\\frac{x}{lnx}$"}</Latex>. This new formulation is
+            reffered to as the logarithmic integral or{" "}
+            <Latex>{"$Li(x)$"}</Latex>. It is important to note that:
+            <span className="w-full flex items-center justify-center p-8">
+              <Latex>{"$\\displaystyle Li(x) \\sim \\frac{x}{lnx}$"}</Latex>
+            </span>
+            Or as the x term tended towards infinity, the two functions were
+            approximately equal. Since the prime numbers do not exactly follow
+            the logarithmic integral, we can use the error term or{" "}
+            <Latex>{"$O(...)$"}</Latex>. This essentially corrects the curve of
+            being solely the logarithmic integral:
+            <span className="w-full flex items-center justify-center p-8">
+              <Latex>
+                {"$\\displaystyle \\pi (x) = Li(x) + O(xe^{-c\\sqrt{lnx} })$"}
+              </Latex>
+            </span>
+            or even better under the Riemman hypothesis:
+            <span className="w-full flex items-center justify-center p-8">
+              <Latex>
+                {"$\\displaystyle \\pi(x) = Li(x) + O(\\sqrt{x}log(x))$"}
+              </Latex>
+            </span>
+            We can compare the two error terms, and it can be seen that the from
+            assuming the Riemman hypothesis <Latex>{"$r(x)$"}</Latex> is much
+            more accurate than the one without it <Latex>{"$n(x)$"}</Latex>{" "}
+            since <Latex>{"$r(x) < n(x)$"}</Latex>.
+            <br />
+            <br />
+            <br />
+            <div className="relative w-full h-[600px] ">
+              <iframe
+                src="https://www.desmos.com/calculator/xg8mostqhm?embed?expressions=true"
+                width={500}
+                height={500}
+                className="absolute top-0 left-0 w-full h-full border border-gray-300"
+              ></iframe>
+            </div>
           </section>
 
-          <section id="primes-pyramid">
+          <section id="circle-method">
             <br />
             <h2 className="text-white text-2xl font-bold pb-2">
               Hardy-Littlewood Circle Method
@@ -489,7 +650,7 @@ const Home = ({ scroll }: Props) => {
               </Latex>
             </span>
           </section>
-          <section>
+          <section id="circle-visualizer">
             <br />
             <h2 className="text-white text-2xl font-bold pb-2">
               Inspecting <Latex>{"$ \\displaystyle S(\\alpha, N) $"}</Latex>{" "}
@@ -528,6 +689,7 @@ const Home = ({ scroll }: Props) => {
           </section>
           <section id="circle-method-decomposition">
             <br />
+            <br />
             <h2 className="text-white text-2xl font-bold pb-2">
               Decomposing the Integral: Major and Minor Arcs
             </h2>
@@ -549,28 +711,20 @@ const Home = ({ scroll }: Props) => {
               <li>
                 <strong>Major arcs</strong>: Small neighborhoods around rational
                 numbers like <Latex>{"$\\frac{a}{q}$"}</Latex> with small
-                denominator <Latex>{"$q$"}</Latex>.
+                denominator <Latex>{"$q$"}</Latex>. This is essentially space
+                with large areas of constructive interference. The function
+                behaves in a fairly "predictable" or "structured" way, allowing
+                us to approximate it.
               </li>
               <li>
                 <strong>Minor arcs</strong>: Everything else — where destructive
-                interference occurs.
+                interference occurs. This is where the circles behave
+                chaotically — the vectors point in seemingly random directions,
+                and when you sum them, they mostly cancel out. This is like
+                summing unit vectors all around a circle.
               </li>
             </ul>
-            <p>
-              On the <strong>major arcs</strong>,{" "}
-              <Latex>{"$S(\\alpha, N)$"}</Latex> behaves in a fairly
-              "predictable" or "structured" way, allowing us to approximate it
-              using number-theoretic tools like exponential sums and the prime
-              number theorem.
-            </p>
-            <p>
-              On the <strong>minor arcs</strong>,{" "}
-              <Latex>{"$S(\\alpha, N)$"}</Latex> behaves chaotically — the
-              vectors point in seemingly random directions, and when you sum
-              them, they mostly cancel out. This is like summing unit vectors
-              all around a circle:
-            </p>
-            <span className="w-full flex items-center justify-center p-4">
+            <span className="w-full flex items-center justify-center p-8">
               <Latex>
                 {
                   "$ \\displaystyle \\sum e^{2\\pi i m \\alpha} \\approx 0 $ (if $\\alpha$ is irrational or not well-approximated by rationals)"
@@ -581,342 +735,282 @@ const Home = ({ scroll }: Props) => {
               So the contribution from the minor arcs is very small — almost
               like noise. The major arcs, on the other hand, lead to
               constructive interference and give us the dominant term in the
-              result.
+              result. Although the example given beforehand where{" "}
+              <Latex>{"$ N = 11$"}</Latex> has constructive intereference only
+              when <Latex>{"$\\alpha = \\{0, 1\\}$"}</Latex>, with larger N
+              values, there will be rational fractions for which constructive
+              interference occurs. The reason for the destructive and
+              constructive nature of the circles happening is the following.
+              Assuming that
+              <Latex>{"$\\ \\alpha = \\frac{1}{2}$"}</Latex> and{" "}
+              <Latex>{"$p = 2n + r$"}</Latex>
             </p>
-          </section>
-
-          <section id="number-of-revolutions">
-            <br />
-            <h2 className="text-white text-2xl font-bold pb-2">
-              Clock Vectors and Number of Revolutions
-            </h2>
-            <p>
-              A helpful way to visualize{" "}
-              <Latex>{"$e^{2\\pi i m \\alpha}$"}</Latex> is as a unit vector
-              rotating around the complex circle. If{" "}
-              <Latex>{"$\\alpha = \\frac{a}{q}$"}</Latex> is rational, then
-              after <Latex>{"$q$"}</Latex> full revolutions, the vector returns
-              to its original position.
-            </p>
-            <p>
-              Think of these vectors like points on a clock. If{" "}
-              <Latex>{"$\\alpha = \\frac{1}{12}$"}</Latex>, the vector rotates
-              by one hour tick each time. After 12 ticks, it returns to the same
-              place.
-            </p>
-            <p>
-              When you sum up many such vectors — say{" "}
-              <Latex>{"$e^{2\\pi i p \\alpha}$"}</Latex> where{" "}
-              <Latex>{"$p$"}</Latex> ranges over primes — you can either get:
-            </p>
-            <ul className="list-disc pl-6">
-              <li>
-                <strong>Constructive interference</strong> (they add up if the
-                rotation repeats periodically, i.e.,{" "}
-                <Latex>{"$\\alpha \\approx \\frac{a}{q}$"}</Latex> for small{" "}
-                <Latex>{"$q$"}</Latex>)
-              </li>
-              <li>
-                <strong>Destructive interference</strong> (they cancel if{" "}
-                <Latex>{"$\\alpha$"}</Latex> is irrational or the rotations
-                never align)
-              </li>
-            </ul>
-            <p>
-              Therefore, this clock analogy helps us understand why the major
-              arcs (with rational <Latex>{"$\\alpha$"}</Latex>) give strong
-              contributions, while the minor arcs (irrational or large
-              denominator <Latex>{"$\\alpha$"}</Latex>) give negligible ones.
-            </p>
-            <p>
-              Try alterting the <Latex>{"$\\alpha$"}</Latex> value.
-            </p>
-            <br />
-          </section>
-
-          {/* <section id="euler-lagrange-derivation">
-            <br />
-            <h2 className="text-white text-2xl font-bold pb-2">
-              Derivation of Euler-Lagrange Equation
-            </h2>
-
-            <p> Step 1: Define the Lagrangian</p>
-            <p>
-              The Lagrangian <Latex>{"$(L)$"}</Latex> is a function that
-              typically depends on the generalized coordinates{" "}
-              <Latex>{"$(q)$"}</Latex>, their time derivatives{" "}
-              <Latex>{"$(q'(t))$"}</Latex>, and possibly time{" "}
-              <Latex>{"$(t)$"}</Latex>. For many physical systems, the
-              Lagrangian represents the difference between the kinetic energy{" "}
-              <Latex>{"$(T)$"}</Latex> and the potential energy{" "}
-              <Latex>{"$(U)$"}</Latex>:
-            </p>
-            <span className="my-10 text-center flex items-center justify-center w-full">
-              <Latex>{"$L(q, q', t) = T(q, q') - U(q, t)$"}</Latex>
-            </span>
-
-            <p> Step 2: Define the Action Functional</p>
-            <p>
-              The action functional <Latex>{"$(S)$"}</Latex> is defined as the
-              integral of the Lagrangian over a time interval{" "}
-              <Latex>{"$[t_0, t_1]$"}</Latex>:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {"$S[q] = \\int_{t_0}^{t_1} L(q(t), q'(t), t) \\, dt$"}
-              </Latex>
-            </span>
-
-            <p>
-              {" "}
-              Step 3: Vary the Action Functional (This step was reccomended by
-              ChatGPT, and I have taken a different route through my
-              derivations)
-            </p>
-            <p>
-              Consider a small variation <Latex>{"$(\\delta q(t))$"}</Latex> to
-              the path <Latex>{"$(q(t))$"}</Latex>. The varied path is{" "}
-              <Latex>{"$(q(t) + \\delta q(t))$"}</Latex>. The variation in the
-              action functional <Latex>{"$(\\delta S)$"}</Latex> is then given
-              by:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>{"$\\delta S = S[q + \\delta q] - S[q]$"}</Latex>
-            </span>
-            <p>
-              To find this variation, expand the action functional around{" "}
-              <Latex>{"$(q(t))$"}</Latex>:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\delta S = \\int_{t_0}^{t_1} L(q + \\delta q, q' + \\delta q', t) \\, dt - \\int_{t_0}^{t_1} L(q, q', t) \\, dt$"
-                }
-              </Latex>
-            </span>
-            <p>
-              Assuming <Latex>{"$(\\delta q)$"}</Latex> is small, we can perform
-              a first-order Taylor expansion of the Lagrangian:
-            </p>
-            <span className="py-10 text-center flex flex-col space-y-10 items-center justify-center w-full">
-              <Latex>{"$L(q + \\delta q, q' + \\delta q', t) $"}</Latex>
-
-              <Latex>
-                {
-                  "$ \\approx L(q, q', t) + \\frac{\\partial L}{\\partial q} \\delta q + \\frac{\\partial L}{\\partial q'} \\delta q'$"
-                }
-              </Latex>
-            </span>
-            <p>Thus,</p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\delta S = \\int_{t_0}^{t_1} \\left( \\frac{\\partial L}{\\partial q} \\delta q + \\frac{\\partial L}{\\partial q'} \\delta q' \\right) \\, dt$"
-                }
-              </Latex>
-            </span>
-
-            <p> Step 4: Apply Integration by Parts</p>
-            <p>
-              Notice that the term involving <Latex>{"$(\\delta q')$"}</Latex>{" "}
-              can be integrated by parts to make the variation only involve{" "}
-              <Latex>{"$(\\delta q)$"}</Latex>. Recall the integration by parts
-              formula:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\int_{t_0}^{t_1} u \\frac{dv}{dt} dt = \\left. u v \\right|_{t_0}^{t_1} - \\int_{t_0}^{t_1} v \\frac{du}{dt} dt$"
-                }
-              </Latex>
-            </span>
-            <p>
-              Set <Latex>{"$( u = \\frac{\\partial L}{\\partial q'} )$"}</Latex>{" "}
-              and <Latex>{"$( dv = \\delta q' \\ dt )$"}</Latex>. Then{" "}
-              <Latex>
-                {
-                  "$( du = \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial q'} \\right) dt )$"
-                }
-              </Latex>{" "}
-              and <Latex>{"$( v = \\delta q )$"}</Latex>, so:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\int_{t_0}^{t_1} \\frac{\\partial L}{\\partial q'} \\delta q' dt = \\left. \\frac{\\partial L}{\\partial q'} \\delta q \\right|_{t_0}^{t_1} - \\int_{t_0}^{t_1} \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial q'} \\right) \\delta q dt$"
-                }
-              </Latex>
-            </span>
-            <p>
-              Assuming that{" "}
-              <Latex>{"$(\\delta q(t_0) = \\delta q(t_1) = 0)$"}</Latex> (the
-              variations at the boundaries are zero), the boundary term
-              vanishes:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\left. \\frac{\\partial L}{\\partial q'} \\delta q \\right|_{t_0}^{t_1} = 0$"
-                }
-              </Latex>
-            </span>
-            <p>Therefore,</p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\int_{t_0}^{t_1} \\frac{\\partial L}{\\partial q'} \\delta q' dt = - \\int_{t_0}^{t_1} \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial q'} \\right) \\delta q dt$"
-                }
-              </Latex>
-            </span>
-
-            <p> Step 5: Combine Terms and Apply the Fundamental Lemma</p>
-            <p>
-              Substituting back into the variation of the action functional:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\delta S = \\int_{t_0}^{t_1} \\left( \\frac{\\partial L}{\\partial q} \\delta q - \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial q'} \\right) \\delta q \\right) dt$"
-                }
-              </Latex>
-            </span>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\delta S = \\int_{t_0}^{t_1} \\left( \\frac{\\partial L}{\\partial q} - \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial q'} \\right) \\right) \\delta q \\, dt$"
-                }
-              </Latex>
-            </span>
-            <p>
-              For the action <Latex>{"$(S)$"}</Latex> to be stationary (i.e.,
-              for <Latex>{"$(q(t))$"}</Latex> to be an extremum of{" "}
-              <Latex>{"$(S)$"}</Latex>), <Latex>{"$(\\delta S)$"}</Latex> must
-              be zero for all possible variations{" "}
-              <Latex>{"$(\\delta q(t))$"}</Latex>. By the fundamental lemma of
-              the calculus of variations, this implies:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\frac{\\partial L}{\\partial q} - \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial q'} \\right) = 0$"
-                }
-              </Latex>
-            </span>
-            <p>
-              This is the <strong>Euler-Lagrange equation</strong>:
-            </p>
-            <span className="py-10 text-center flex items-center justify-center w-full">
-              <Latex>
-                {
-                  "$\\frac{\\partial L}{\\partial q} - \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial q'} \\right) = 0$"
-                }
-              </Latex>
-            </span>
-            <p>And that completes the derivation!</p>
-
-            <p>
-              The complete derivation with a little more steps can be found with
-              the PDF linked below
-            </p>
-          </section>
-          <br />
-          <section id="double-pendulum-derivation">
-            <h2 className="text-white text-2xl font-bold pb-2">
-              Derivation of Double Pendulum
-            </h2>
-            <div className="w-full flex-col min-[1200px]:flex-row flex gap-10">
-              <div className="min-[1200px]:w-1/2 w-full flex flex-col items-center ">
-                <span className="my-10 text-center flex items-center justify-center w-full">
-                  <Latex>
-                    {
-                      "$\\frac{\\partial L}{\\partial q} - \\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial \\dot{q}} \\right) = 0, \\space \\\\L = T - V$"
-                    }
-                  </Latex>
-                </span>
+            <div className="flex-row space-x-10 flex items-center justify-center pt-8">
+              <table>
+                <tr>
+                  <td></td>
+                  <td>
+                    <Latex>{"$p$"}</Latex>
+                  </td>
+                  <td>
+                    <Latex>{"$n$"}</Latex>
+                  </td>
+                  <td>
+                    <Latex>{"$r$"}</Latex>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{2}{2}}$"}</Latex>
+                  </td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{3}{2}}$"}</Latex>
+                  </td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{5}{2}}$"}</Latex>
+                  </td>
+                  <td>5</td>
+                  <td>2</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{7}{2}}$"}</Latex>
+                  </td>
+                  <td>7</td>
+                  <td>3</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{11}{2}}$"}</Latex>
+                  </td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>1</td>
+                </tr>
+              </table>
+              <div>
                 <p>
-                  The derivation for the formulas that are used in its
-                  visualization are shown, but can also be found here for a
-                  clearer version:{" "}
-                  <a className="font-bold" href="">
-                    LINK
-                  </a>
-                  <br />
-                  <br />
-                  The final equations are as follows:
+                  <i className="arrow right"></i>
                 </p>
-                <div className="flex flex-col gap-10 pt-10">
-                  <div className="flex flex-row gap-9">
-                    <Latex>
-                      {
-                        "$\\dot{\\theta}=\\left(\\frac{a-c\\ddot{\\theta}}{b}\\right)$"
-                      }
-                    </Latex>
-                    <Latex>
-                      {" $\\ddot{\\theta}=\\left(\\frac{fb-wa}{kb-wc}\\right)$"}
-                    </Latex>
-                  </div>
-
-                  <div className="flex flex-col gap-10">
-                    <div>
-                      <ul>
-                        <li>
-                          <Latex>{" $a=-(m_1+m_2)gR_1sin(\\theta_1)$"}</Latex>
-                        </li>
-                        <li>
-                          <Latex>{" $b=(m_1+m_2)R_1^2$"}</Latex>
-                        </li>
-                        <li>
-                          <Latex>
-                            {" $c=m_2R_1R_2cos(\\theta_1-\\theta_2)$"}
-                          </Latex>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul>
-                        <li>
-                          <Latex>
-                            {
-                              " $f=-m_2gR_2sin(\\theta_2) + m_2R_1R_2\\ddot{\\theta_1}^2sin(\\theta_1-\\theta_2)$"
-                            }
-                          </Latex>
-                        </li>
-                        <li>
-                          <Latex>{"$k=m_2R_2^2$"}</Latex>
-                        </li>
-                        <li>
-                          <Latex>
-                            {" $w=m_2R_1R_2cos(\\theta_1-\\theta_2)$"}
-                          </Latex>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div className="min-[1200px]:w-1/2 w-full flex items-center justify-center">
-                <iframe
-                  src="https://drive.google.com/file/d/1OTLheqAu_0YbTy7cu28S7PH0r4RXVWXN/preview"
-                  width="640"
-                  height="480"
-                  className="rounded-3xl"
-                  allow="autoplay"
-                ></iframe>
-              </div>
+              <table>
+                <tr>
+                  <td></td>
+                  <td>
+                    <Latex>{"$p$"}</Latex>
+                  </td>
+                  <td>
+                    <Latex>{"$r$"}</Latex>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{2}{2}}$"}</Latex>
+                  </td>
+                  <td>2</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{3}{2}}$"}</Latex>
+                  </td>
+                  <td>3</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{5}{2}}$"}</Latex>
+                  </td>
+                  <td>5</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{7}{2}}$"}</Latex>
+                  </td>
+                  <td>7</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{11}{2}}$"}</Latex>
+                  </td>
+                  <td>11</td>
+                  <td>1</td>
+                </tr>
+              </table>
             </div>
-          </section>
-          <br />
-          <section id="double-pendulum-visualization">
-            <h2 className="text-white text-2xl font-bold pb-2">Visualizer</h2>
             <br />
-            <iframe
-              src="https://trinket.io/embed/glowscript/7dcfe940bb?start=result"
-              width="100%"
-              height="600"
-              allowFullScreen
-              className="rounded-3xl"
-            ></iframe>
-          </section>*/}
+            Since we are not concerned with full revolutions of n, we only focus
+            on r. In this example, since the remainders are all one, this means
+            that the circles do a half rotation and constructively interefere at{" "}
+            <Latex>{"$\\alpha = \\frac{1}{2}$"}</Latex>. We can do this process
+            again, but for <Latex>{"$\\alpha = \\frac{1}{3}$"}</Latex>
+            <div className="flex-row space-x-10 flex items-center justify-center pt-8">
+              <table>
+                <tr>
+                  <td></td>
+                  <td>
+                    <Latex>{"$p$"}</Latex>
+                  </td>
+                  <td>
+                    <Latex>{"$n$"}</Latex>
+                  </td>
+                  <td>
+                    <Latex>{"$r$"}</Latex>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{2}{3}}$"}</Latex>
+                  </td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{3}{3}}$"}</Latex>
+                  </td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{5}{3}}$"}</Latex>
+                  </td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{7}{3}}$"}</Latex>
+                  </td>
+                  <td>7</td>
+                  <td>2</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{11}{3}}$"}</Latex>
+                  </td>
+                  <td>11</td>
+                  <td>3</td>
+                  <td>2</td>
+                </tr>
+              </table>
+
+              <div>
+                <p>
+                  <i className="arrow right"></i>
+                </p>
+              </div>
+
+              <table>
+                <tr>
+                  <td></td>
+                  <td>
+                    <Latex>{"$p$"}</Latex>
+                  </td>
+                  <td>
+                    <Latex>{"$r$"}</Latex>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{2}{3}}$"}</Latex>
+                  </td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{3}{3}}$"}</Latex>
+                  </td>
+                  <td>3</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{5}{3}}$"}</Latex>
+                  </td>
+                  <td>5</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{7}{3}}$"}</Latex>
+                  </td>
+                  <td>7</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Latex>{"$e^{2\\pi i \\frac{11}{3}}$"}</Latex>
+                  </td>
+                  <td>11</td>
+                  <td>2</td>
+                </tr>
+              </table>
+            </div>
+            <br />
+            Once again, there is constructive intereference. This pattern also
+            occurs for other rational fractions, but for other non rational
+            fractions the same pattern of constructive intereference does not
+            occur. This means the majority of interefernece that came means that
+            Littlewood and Hardy could split their calculation into two main
+            parts.
+            <span className="sm:flex-row flex-col space-x-1 sm:space-y-0 space-y-5 w-full flex items-center justify-center p-8">
+              <Latex>
+                {
+                  "$ h(N) = \\displaystyle \\underbrace{ \\int_{M} S(\\alpha, N)^3e^{-2\\pi i N \\alpha} d\\alpha}_{Major Arcs} $"
+                }
+              </Latex>
+              <Latex>
+                {
+                  "$+ \\underbrace{\\int_{m} S(\\alpha, N)^3e^{-2\\pi i N \\alpha}d\\alpha}_{Minor Arcs} $"
+                }
+              </Latex>
+            </span>
+            This can be isolated for the main term, which is essentially created
+            by the major arcs
+            <span className="w-full flex items-center justify-center p-8">
+              <Latex>
+                {
+                  "$ f(N) = \\displaystyle  \\int_{M} S(\\alpha, N)^3e^{-2\\pi i N \\alpha} d\\alpha $"
+                }
+              </Latex>
+            </span>
+            and an error term
+            <span className="w-full flex items-center justify-center p-8">
+              <Latex>
+                {
+                  "$ e(N) = \\displaystyle  \\int_{m} S(\\alpha, N)^3e^{-2\\pi i N \\alpha} d\\alpha $"
+                }
+              </Latex>
+            </span>
+            Littlewood and Hardy then showed that if the Riemman Hypothesis is
+            true, then the main term <Latex>{"$f(N)$"}</Latex> grows faster than
+            the error term <Latex>{"$e(N)$"}</Latex> from some value{" "}
+            <Latex>{"$K$"}</Latex>. That means eventually, the value of{" "}
+            <Latex>{"$h(N) \\ge 1 $"}</Latex> all the weak Goldbach conjecture
+            holds. H.A. Helfgott proved that every odd number greater than 5 can
+            be written as primes by leveraging the Hardy–Littlewood method.
+          </section>
         </div>
         <Footer />
       </div>

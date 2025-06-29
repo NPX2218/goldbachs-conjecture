@@ -48,7 +48,7 @@ const Navbar = ({ scroll }) => {
               src={goldbachLogo}
               width="100"
               height="100"
-              alt="Pendulum Logo"
+              alt="Goldbach Logo"
             />
             <div className="sm:text-2xl text-xl md:text-4xl font-bold">
               Goldbach's Conjecture
@@ -111,20 +111,25 @@ const Navbar = ({ scroll }) => {
             <a
               onClick={() =>
                 handleNavigation(
-                  "#euler-lagrange-derivation",
+                  "#prime-number-theorem",
                   "/goldbachs-conjecture"
                 )
               }
               className="cursor-pointer py-2 px-3 rounded"
             >
-              Derivation
+              PNT
             </a>
             <a
               onClick={() =>
-                handleNavigation(
-                  "#double-pendulum-visualization",
-                  "/goldbachs-conjecture"
-                )
+                handleNavigation("#circle-method", "/goldbachs-conjecture")
+              }
+              className="cursor-pointer py-2 px-3 rounded"
+            >
+              Circle Method
+            </a>
+            <a
+              onClick={() =>
+                handleNavigation("#circle-visualizer", "/goldbachs-conjecture")
               }
               className="cursor-pointer py-2 px-3 rounded"
             >
@@ -154,20 +159,25 @@ const Navbar = ({ scroll }) => {
             <a
               onClick={() =>
                 handleNavigation(
-                  "#euler-lagrange-derivation",
+                  "#prime-number-theorem",
                   "/goldbachs-conjecture"
                 )
               }
               className="cursor-pointer py-2 px-3 rounded"
             >
-              Euler Lagrange
+              Prime Number Theorem
             </a>
             <a
               onClick={() =>
-                handleNavigation(
-                  "#double-pendulum-visualization",
-                  "/goldbachs-conjecture"
-                )
+                handleNavigation("#circle-method", "/goldbachs-conjecture")
+              }
+              className="cursor-pointer py-2 px-3 rounded"
+            >
+              Circle Method
+            </a>
+            <a
+              onClick={() =>
+                handleNavigation("#circle-visualizer", "/goldbachs-conjecture")
               }
               className="cursor-pointer py-2 px-3 rounded"
             >
