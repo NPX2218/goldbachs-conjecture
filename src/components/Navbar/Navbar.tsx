@@ -165,7 +165,7 @@ const Navbar = ({ scroll }) => {
               }
               className="cursor-pointer py-2 px-3 rounded"
             >
-              Prime Number Theorem
+              PNT
             </a>
             <a
               onClick={() =>
