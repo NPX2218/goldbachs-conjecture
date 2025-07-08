@@ -9,8 +9,7 @@ import { Link } from "react-router-dom";
 // COMPONENT: FOOTER
 /////////////////////////////////////
 
-// #fff700
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <div className="w-full h-full">
       <div className="dm-sans-normal self-stretch mt-32 w-full bg-[#ffbf00] min-h-[1px] max-md:mt-10 max-md:max-w-full" />

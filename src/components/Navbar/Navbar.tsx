@@ -9,9 +9,9 @@ import goldbachLogo from "./goldbach_logo.png";
 // COMPONENT: NAVBAR
 /////////////////////////////////////
 
-const Navbar = ({ scroll }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+const Navbar = ({ scroll }): JSX.Element => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,11 +26,19 @@ const Navbar = ({ scroll }) => {
     };
   }, []);
 
+  /////////////////////////////////////
+  // FUNCTION: TOGGLE MENU
+  /////////////////////////////////////
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
-  const handleNavigation = (selector, fallbackHref) => {
+  /////////////////////////////////////
+  // FUNCTION: HANDLE NAVIGATION
+  /////////////////////////////////////
+
+  const handleNavigation = (selector: string, fallbackHref: string) => {
     const element = document.querySelector(selector);
     if (element) {
       scroll.scrollTo(element);

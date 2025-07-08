@@ -6,12 +6,20 @@ import React from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { bibliographiesData } from "../../data/bibliographies";
+import LocomotiveScroll from "locomotive-scroll";
 
+/////////////////////////////////////
+// INTERFACE: BIBLIOGRAPHIES PROPS
+/////////////////////////////////////
+
+interface BibliographiesProps {
+  scroll: LocomotiveScroll | null;
+}
 /////////////////////////////////////
 // COMPONENT: BIBLIOGRAPHIES
 /////////////////////////////////////
 
-const Bibliographies = ({ scroll }: any) => {
+const Bibliographies = ({ scroll }: BibliographiesProps): JSX.Element => {
   return (
     <div className="flex flex-col items-center py-12 bg-black">
       <div className="flex flex-col items-center self-stretch px-20 mt-1.5 w-full max-md:px-5 max-md:max-w-full">

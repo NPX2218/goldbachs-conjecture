@@ -2,10 +2,11 @@
 // IMPORTING LIBRARIES
 /////////////////////////////////////
 
-import React, { useState, useEffect, lazy, Suspense, useRef } from "react";
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import React, { useState, useEffect, Suspense, useRef } from "react";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Bibliographies from "../pages/Bibliographies/Bibliographies";
+
 /////////////////////////////////////
 // COMPONENT: ROUTER
 /////////////////////////////////////
@@ -33,8 +34,6 @@ const Router: React.FC = (): JSX.Element => {
     }
   }, []);
 
-  const ErrorPage = lazy(() => import("../pages/404/ErrorPage"));
-  //basename="/goldbachs-conjecture"
   return (
     <HashRouter>
       <Routes>
@@ -62,5 +61,9 @@ const Router: React.FC = (): JSX.Element => {
     </HashRouter>
   );
 };
+
+/////////////////////////////////////
+// EXPORTING ROUTER
+/////////////////////////////////////
 
 export default Router;
