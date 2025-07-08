@@ -3,6 +3,7 @@
 /////////////////////////////////////
 
 import React from "react";
+import primeCountingFunction from "../../../data/prime_counting_function.png";
 var Latex = require("react-latex");
 
 /////////////////////////////////////

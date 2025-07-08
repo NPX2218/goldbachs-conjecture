@@ -12,6 +12,7 @@ import GuassConjecture from "./Sections/GuassConjecture";
 import PrimeNumberTheorem from "./Sections/PrimeNumberTheorem";
 import CircleMethod from "./Sections/CircleMethod";
 import CircleVisualizer from "./Sections/CircleVisualizer";
+import CircleMethodDecomposition from "./Sections/CircleMethodDecomposition";
 
 /////////////////////////////////////
 // INTERFACE: HOME PROPS
@@ -42,6 +43,7 @@ const Home = ({ scroll }: HomeProps) => {
           <PrimeNumberTheorem />
           <CircleMethod />
           <CircleVisualizer />
+          <CircleMethodDecomposition />
         </div>
         <Footer />
       </div>
