@@ -1,22 +1,18 @@
 {
   "files": {
-    "main.css": "/goldbachs-conjecture/static/css/main.75a770ad.css",
-    "main.js": "/goldbachs-conjecture/static/js/main.f26a4e8d.js",
+    "main.css": "/goldbachs-conjecture/static/css/main.9ec07d03.css",
+    "main.js": "/goldbachs-conjecture/static/js/main.7c1efbb1.js",
     "static/js/346.1a668358.chunk.js": "/goldbachs-conjecture/static/js/346.1a668358.chunk.js",
-    "static/js/585.a6c15a81.chunk.js": "/goldbachs-conjecture/static/js/585.a6c15a81.chunk.js",
-    "static/js/204.87b9c11c.chunk.js": "/goldbachs-conjecture/static/js/204.87b9c11c.chunk.js",
     "static/media/primes_pyramid.png": "/goldbachs-conjecture/static/media/primes_pyramid.0320ded0cab53fb25723.png",
     "static/media/prime_counting_function.png": "/goldbachs-conjecture/static/media/prime_counting_function.937881fa711877f79149.png",
     "static/media/goldbach_logo.png": "/goldbachs-conjecture/static/media/goldbach_logo.c75e14daae31054d4832.png",
     "index.html": "/goldbachs-conjecture/index.html",
-    "main.75a770ad.css.map": "/goldbachs-conjecture/static/css/main.75a770ad.css.map",
-    "main.f26a4e8d.js.map": "/goldbachs-conjecture/static/js/main.f26a4e8d.js.map",
-    "346.1a668358.chunk.js.map": "/goldbachs-conjecture/static/js/346.1a668358.chunk.js.map",
-    "585.a6c15a81.chunk.js.map": "/goldbachs-conjecture/static/js/585.a6c15a81.chunk.js.map",
-    "204.87b9c11c.chunk.js.map": "/goldbachs-conjecture/static/js/204.87b9c11c.chunk.js.map"
+    "main.9ec07d03.css.map": "/goldbachs-conjecture/static/css/main.9ec07d03.css.map",
+    "main.7c1efbb1.js.map": "/goldbachs-conjecture/static/js/main.7c1efbb1.js.map",
+    "346.1a668358.chunk.js.map": "/goldbachs-conjecture/static/js/346.1a668358.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.75a770ad.css",
-    "static/js/main.f26a4e8d.js"
+    "static/css/main.9ec07d03.css",
+    "static/js/main.7c1efbb1.js"
   ]
 }
